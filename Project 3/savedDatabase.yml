@@ -1,0 +1,100 @@
+users:
+  buddy:
+    username: buddy
+    articleIds:
+      - 1
+      - 2
+    commentIds:
+      - 1
+      - 2
+      - 3
+  Johnny:
+    username: Johnny
+    articleIds:
+      - 3
+      - 4
+    commentIds: []
+  smith:
+    username: smith
+    articleIds: []
+    commentIds:
+      - 4
+articles:
+  '1':
+    id: 1
+    title: test1
+    url: test.com
+    username: buddy
+    commentIds:
+      - 1
+      - 4
+    upvotedBy: []
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        body: you suck
+        username: buddy
+        articleId: 1
+        upvotedBy:
+          - smith
+        downvotedBy: []
+      - &ref_2
+        id: 4
+        body: this is terrible!
+        username: smith
+        articleId: 1
+        upvotedBy: []
+        downvotedBy: []
+  '2':
+    id: 2
+    title: test2
+    url: dick.com
+    username: buddy
+    commentIds: []
+    upvotedBy: []
+    downvotedBy:
+      - smith
+    comments: []
+  '3':
+    id: 3
+    title: Johnnys Article
+    url: johnny.com
+    username: Johnny
+    commentIds:
+      - 3
+    upvotedBy: []
+    downvotedBy: []
+    comments: []
+  '4':
+    id: 4
+    title: Another Article
+    url: another.com
+    username: Johnny
+    commentIds:
+      - 2
+    upvotedBy:
+      - smith
+    downvotedBy: []
+    comments:
+      - &ref_1
+        id: 2
+        body: i hate you
+        username: buddy
+        articleId: 4
+        upvotedBy: []
+        downvotedBy:
+          - smith
+nextArticleId: 5
+comments:
+  '1': *ref_0
+  '2': *ref_1
+  '3':
+    id: 3
+    body: this sucks
+    username: buddy
+    articleId: 3
+    upvotedBy: []
+    downvotedBy: []
+  '4': *ref_2
+nextCommentId: 5
